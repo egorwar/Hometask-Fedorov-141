@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1601709139 source:d:\c++ projects\finding pi\main.cpp
+	<iostream>
+	<cmath>
+	<iomanip>
+
