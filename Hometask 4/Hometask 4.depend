@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1601790614 source:d:\c++ projects\hometask 4\main.cpp
+	<iostream>
+	<cmath>
+	<windows.h>
+
