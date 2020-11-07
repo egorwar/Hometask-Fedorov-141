@@ -2,16 +2,17 @@
 
 using namespace std;
 
-float mtp(double x, double y){
-    return x*y;
+void mtp(double x, double y, double &z){
+    z = x*y;
 }
 
 
 int main()
 {
     cout << "Insert two numbers: ";
-    double a, b;
+    double a, b, x;
     cin >> a >> b;
-    cout << "The product is " << mtp(a, b);
+    mtp(a, b, x);
+    cout << "The product is " << x;
     return 0;
 }
