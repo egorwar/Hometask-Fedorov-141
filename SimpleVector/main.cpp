@@ -48,6 +48,28 @@ public:
         return -1;
     }
 
+    bool eraseFirst(T el){
+        int ind = findFirst(el);
+        if(ind == -1) return false;
+        else erase_(ind);
+        return true;
+    }
+
+    bool insertAfter(T el, T mark){
+        int ind = findFirst(mark);
+        if(ind == -1) return false;
+        if(pointer == n){
+            T* tmp = new T(n*2);
+            n *= 2;
+            for(int i = 0; i < n; i++) *(tmp+i) = *(arr+i);
+            arr = tmp;
+        }
+        for(int i = n; i > ind+1; i--) swap(*(arr+i-1),*(arr+i));
+        *(arr+ind+1) = el;
+        return true;
+
+    }
+
     void print(){
         cout <<"Dynamic length is: " << pointer << endl;
         for(int i = 0; i < pointer; i++)
@@ -70,6 +92,12 @@ int main()
     v.print();
     v.erase_(v.findFirst(13));
     v.print();
-    cout << "\nv[5] is " << v[5];
+    cout << "\nv[5] is " << v[5] <<'\n';
+    SimpleVector<char> c(5, '*');
+    c.print();
+    c.insertAfter('#','*');
+    c.print();
+    c.eraseFirst('#');
+    c.print();
     return 0;
 }
